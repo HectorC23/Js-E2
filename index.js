@@ -35,7 +35,7 @@ const verificarELImput = () =>  {
         contenedor.innerHTML = `
         <h2> ERROR </h2>
 
-        <h3> NO INGRESO NINGUN VALOR  </h3>
+        <h3> NO INGRESÓ NINGUN VALOR  </h3>
         `
     } else if (valorInput < min || valorInput > max) {
         contenedor.innerHTML = `
