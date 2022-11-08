@@ -27,19 +27,25 @@ form.addEventListener("submit", (e) => {
 
 const verificarELImput = () =>  {
 
-    let valorInput = input.value-1;
+    let valorInput = input.value;
     
-    const min = 0;
-    const max = 5;
-    if (valorInput === "" || valorInput < min || valorInput > max ) {
+    const min = 1;
+    const max = 6;
+    if (valorInput === "") {
         contenedor.innerHTML = `
         <h2> ERROR </h2>
 
-        <h3> ESA PIZZA NO EXISTE </h3>
+        <h3> NO INGRESO NINGUN VALOR  </h3>
+        `
+    } else if (valorInput < min || valorInput > max) {
+        contenedor.innerHTML = `
+        <h2> ERROR </h2>
+
+        <h3> INGRESE UN VALOR ENTRE ${min} y ${max} </h3>
         `
     } else {
 
-        let pizzaAgregar = arrayDePizzas[input.value-1];
+        let pizzaAgregar = arrayDePizzas[valorInput-1];
         contenedor.innerHTML = `
     
         <h2> ${pizzaAgregar.nombre} </h2>
